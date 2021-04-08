@@ -6,6 +6,6 @@ def First(request):
     return HttpResponse('First message from views')
 
 def Second(request):
-    return HttpResponse('Second message from views')
+    return HttpResponse('Second message')
 
 

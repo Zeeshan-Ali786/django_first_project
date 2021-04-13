@@ -4,7 +4,9 @@ from .views import Third
 
 urlpatterns = [
     path('first', views.First),
-    path('s', views.Second),
-    path('third', views.Third),
-    path('class', Third.as_view())
+    path('third', Third.as_view()),
+    path('second', views.Second),
+    path('template', views.temp),
+
+    # path('class', Third.as_view())
 ]

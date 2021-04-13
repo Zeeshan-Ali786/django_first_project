@@ -9,3 +9,7 @@ class Student(models.Model):
     Date_of_Birth = models.DateField()
     Gender = models.BooleanField()
     Email = models.EmailField()
+
+
+    def __str__(self):
+        return self.First_Name

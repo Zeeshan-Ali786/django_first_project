@@ -2,7 +2,9 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.views import View
 from .models import Student
-
+from rest_framework import viewsets
+from .serializers import StudentSerializer
+from .models import Student
 
 # Create your views here.
 
@@ -26,3 +28,7 @@ def temp(request):
     students = Student.objects.all()
     # return render(request, 'first_temp.html', {'data': 'This is Data inside views File And this is called Dynamic template'})
     return render(request, 'first_temp.html', {'students': students})
+
+class StudentViewSet(viewsets.ModelViewSet):
+    serializer_class = StudentSerializer
+    queryset = Student.objects.all()

@@ -8,9 +8,9 @@ router = routers.DefaultRouter()
 router.register('students', StudentViewSet)
 
 urlpatterns = [
-    path('first', views.First),
+    path('first', views.first),
     # path('third', Third.as_view()),
-    path('second', views.Second),
+    path('second', views.second),
     path('template', views.temp),
     path('', include(router.urls)),
 

@@ -1,30 +1,30 @@
 from rest_framework import serializers
-from .models import Student, StudentID, Character, Batch
+from .models import Student, StudentID, Character, Department
 
 
 class StudentIDSerializer(serializers.ModelSerializer):
     class Meta:
         model = StudentID
-        fields = ['id', 'isbn_10', 'isbn_12']
+        fields = ['id', 'batch', 'roll_no', 'department']
 
 
 class CharacterSerializer(serializers.ModelSerializer):
     class Meta:
         model = Character
-        fields = ['id', 'batch']
+        fields = ['id', 'department']
 
 
-class BatchSerializer(serializers.ModelSerializer):
+class DepartmentSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Batch
-        fields = ['id', 'batch_name', 'batch_abbreviation']
+        model = Department
+        fields = ['id', 'department_name', 'department_abbreviation']
 
 
 class StudentSerializer(serializers.ModelSerializer):
-    number = StudentIDSerializer(many=False)
+    batch = StudentIDSerializer(many=False)
     characters = CharacterSerializer(many=True)
-    batch = BatchSerializer(many=True)
+    department = DepartmentSerializer(many=True)
 
     class Meta:
         model = Student
-        fields = ['id', 'first_name', 'last_name', 'father_name', 'gender', 'date_of_birth', 'number', 'characters', 'batch']
+        fields = ['id', 'first_name', 'last_name', 'father_name', 'gender', 'date_of_birth', 'batch', 'characters', 'department']

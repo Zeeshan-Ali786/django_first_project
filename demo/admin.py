@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Student, StudentID, Character, Batch
+from .models import Student, StudentID, Character, Department
 # from .views import temp
 # Register your models here.
 # admin.register(temp)
@@ -15,5 +15,5 @@ class StudentAdmin(admin.ModelAdmin):
 
 admin.site.register(StudentID)
 admin.site.register(Character)
-admin.site.register(Batch)
+admin.site.register(Department)
 

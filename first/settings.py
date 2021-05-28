@@ -58,7 +58,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "http://192.168.1.102:8080"
+    "http://192.168.1.107:8080"
 ]
 ROOT_URLCONF = 'first.urls'
 
